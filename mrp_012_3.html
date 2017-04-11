@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Review and Conclusions</title>
+<style type="text/css">
+<!--
+body {
+	background: #42413C;
+	padding: 25 px;
+	color: #FFF;
+	background-color: #000;
+	margin: 25 px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: normal;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 0px;
+	padding-left: 0px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #ADB96E;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	padding-bottom: 10px;
+	background-color: #FFF;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: left;
+	margin: 500 px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+	font-size: 36%;
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #fff3ad;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	color: #FFF;
+	background-color: #fff096;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 10 px;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	background-color: #195695;
+	padding-bottom: 5px;
+	padding-top: 7px;
+	padding-left: 5px;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.container .sidebar1 .nav li a {
+	font-size: 36pt;
+}
+.container .sidebar1 .nav li a {
+	font-size: 12px;
+}
+.container .sidebar1 .nav li a {
+	font-size: 12pt;
+}
+.container .sidebar1 .nav li a {
+	font-size: 11px;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.aa {
+	font-size: 16%;
+}
+.footy {
+	font-size: 12%;
+}
+.footy {
+	font-size: 12pt;
+}
+.footy {
+	font-size: 10pt;
+}
+.footy {
+	font-size: 9pt;
+}
+.footy {
+	font-weight: bold;
+	font-style: italic;
+}
+homehome {
+	font-size: 100pt;
+}
+#homehome {
+	font-size: 10pt;
+}
+#maintitle {
+	color: #000;
+}
+#foooooter {
+	line-height: normal;
+	color: #FFF;
+	font-style: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+.abstract4 {	font-size: 10pt;
+}
+.dssdssad {	font-size: 9px;
+	font-style: italic;
+}
+.prevnext {text-align: center;
+}
+#abstract2 {	font-size: 10%;
+}
+#abstract2 {	font-size: 10pt;
+}
+#essaytext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: left;
+	padding: 0px;
+}
+-->
+</style>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/back2.jpg','images/home2.jpg','images/fwd2.jpg')">
+
+<div class="container">
+  <div class="footer"><!-- end .header -->Digging Deeper into Digg: Power Users, Gatekeepers and Agenda Setting</div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="mrp_001.html">Home</a></li>
+      <li><a href="mrp_001_2.html">Acknowledgements</a></li>
+      <li><a href="mrp_002.html">Abstract</a></li>
+      <li><a href="mrp_003.html">Digg: A Brief History</a></li>
+      <li><a href="mrp_004.html">Review of Literature: Gatekeeping and Agenda Setting</a></li>
+      <li><a href="mrp_005.html">Review of Literature: Power Users and Central Hierarchies</a></li>
+      <li><a href="mrp_006.html">Research Questions</a></li>
+      <li><a href="mrp_007.html">Methodologies</a></li>
+      <li><a href="mrp_008.html">Results: What users appear on Digg's front page the most?</a></li>
+      <li><a href="mrp_009.html">Results: What categories  do these users post in?</a></li>
+      <li><a href="mrp_010.html">Results: What topics are most often discussed on Digg?</a></li>
+      <li><a href="mrp_011.html">Results: Is activity on Digg increasing or decreasing?</a></li>
+      <li><a href="mrp_012.html">Review and Conclusions<br /></a></li>
+      <li><a href="mrp_013.html">Works Cited<br /></a></li>
+      </li>
+    </ul>
+<p><center><img src="diggmenugraphic.jpg" width="154" height="80" alt="Digg" /></center></p>    <!-- end .sidebar1 -->
+  </div>
+  <div class="content">
+    <table width="700" height="313" border="0" align="center" cellpadding="10" cellspacing="10">
+      <tr>
+        <td width="535" height="246" align="center" valign="top" id="essaytext"><p><u><strong>Review and Conclusions</strong></u> (cont'd)</p>
+          <p><strong>Conclusions:</strong> Digg&rsquo;s rebranding process was a failure in two main ways – the site lost a large contingent of its user base, and power users now dominate Digg&rsquo;s front page more than ever, acting as a tightly run oligarchy of users. The new age gatekeepers of a new age medium, these users have the ability to influence what appears on Digg far more than any other users, and use this power to give the website a strong liberal slant, including an abundance of material favouring the Democratic agenda and liberation of marijuana usage.</p>
+          <p>Whereas traditional gatekeepers were found in television, newspaper and radio, the gatekeepers of this time are found online – where information arguably cannot be controlled, and is fully open. With this openness however, a new question arises – the availability of a seemingly endless amount of sources for stories/news online means we have a surplus of information available to us. With this overwhelming quantity of sources, is quality sacrificed? How are we to determine that one source is better than another?</p>
+          <p>Moving forward, it would be interesting to see if such gatekeeping trends are common amongst other online news aggregators – specifically Reddit.com, who overtook Digg in traffic rankings last August as the internet&rsquo;s top news aggregation website. For now however, it is safe to say that in its current state, Digg has hit rock bottom. Receiving now only a fraction of the visitors it once received on a regular basis, the site has been commandeered by a group of users with a specific agenda. A clear example of the adage, &ldquo;if it isn&rsquo;t broken, don&rsquo;t fix it,&rdquo; Digg attempted to fix what many thought was wrong with an excellent site, only to drive away its core users. </p>
+          <p>Is it possible to have a media landscape free of gatekeeping and agenda setting? In this instance, it appears not. Through its own attempts to curb gatekeepers and agenda setting, Digg ultimately dug its own grave.          </p>
+          <div>
+            <div> </div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+<p>&nbsp;</p>
+          <div>
+  <div> </div>
+  <div> </div>
+</div>
+<div>
+  <div> </div>
+</div></td>
+      </tr>
+      <tr>
+        <td height="36" align="right" class="dssdssad"><table width="700" border="0">
+          <tr>
+            <td width="104"><a href="mrp_012_2.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','images/back2.jpg',1)"><img src="images/back1.jpg" alt="Previous" name="Image3" width="50" height="50" border="0" align="left" id="Image3" /></a></td>
+            <td width="110" align="right"><a href="mrp_013.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','images/fwd2.jpg',1)"><img src="images/fwd1.jpg" alt="Next Page" name="Image2" width="50" height="50" border="0" align="right" id="Image2" /></a><a href="mrp_001.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','images/home2.jpg',1)"></a></td>
+          </tr>
+        </table>
+       </td>
+      </tr>
+    </table>
+    <h1><!-- end .content --></h1>
+  </div>
+  <div class="footer">
+    <p align="right" class="footy"> <a href="http://www.darylspong.com" id="foooooter">Copyright © 2011, Daryl Spong. All rights reserved. </a></p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+</html>
